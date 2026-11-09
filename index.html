@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dyson V15 · Click to clean</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="workspace">
+    <header>
+      <a class="wordmark" href="./index.html" aria-label="Model home">dyson<span>interaction lab</span></a>
+      <span class="project-tag">COURSE PROJECT / 01</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">RETHINKING THE TRIGGER</p>
+      <h1>Click to clean.<br>Let your finger rest.</h1>
+      <p>A Dyson V15 interaction study. Click once to start,<br class="desktop-break"> then click again to stop. No holding required.</p>
+    </section>
+
+    <section class="model" aria-label="Interactive vacuum model">
+      <div class="product-stage" id="product-stage">
+        <div class="stage-top"><span>V15</span><span>CORDLESS VACUUM MODEL</span></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <svg class="vacuum" viewBox="0 0 440 530" role="img" aria-labelledby="vacuum-title">
+          <title id="vacuum-title">Stylized cordless vacuum with a purple motor, clear dust bin, gold wand and cleaning head</title>
+          <defs>
+            <linearGradient id="metal"><stop stop-color="#a3a6ad"/><stop offset=".45" stop-color="#f1f2f3"/><stop offset="1" stop-color="#727783"/></linearGradient>
+            <linearGradient id="gold"><stop stop-color="#9c6e1c"/><stop offset=".45" stop-color="#edc56a"/><stop offset="1" stop-color="#bd8b2b"/></linearGradient>
+            <linearGradient id="purple"><stop stop-color="#45276f"/><stop offset=".5" stop-color="#9561ce"/><stop offset="1" stop-color="#60328c"/></linearGradient>
+          </defs>
+          <g transform="rotate(24 220 260)">
+            <path d="M225 140 L268 145 L263 225 L237 226 L240 177 L216 171" fill="#44454d"/>
+            <path d="M246 164 L257 167 L254 190 L244 187" fill="#d44442"/>
+            <rect x="206" y="193" width="22" height="266" rx="6" fill="url(#gold)"/>
+            <rect x="201" y="188" width="32" height="32" rx="8" fill="#585b64"/>
+            <rect x="167" y="109" width="74" height="91" rx="15" fill="#dce2e6" fill-opacity=".68" stroke="#b3bbc2" stroke-width="3"/>
+            <path d="M180 132 L220 132 L220 182 L180 182 Z" fill="url(#metal)"/>
+            <path d="M169 175 L238 175 M169 184 L238 184" stroke="#b0b7be" stroke-width="3"/>
+            <rect x="150" y="88" width="125" height="49" rx="20" fill="url(#metal)"/>
+            <g fill="url(#gold)" stroke="#9e7a32" stroke-width="1.5">
+              <ellipse cx="162" cy="104" rx="11" ry="21"/><ellipse cx="180" cy="100" rx="11" ry="22"/>
+              <ellipse cx="199" cy="99" rx="11" ry="23"/><ellipse cx="218" cy="100" rx="11" ry="22"/>
+            </g>
+            <rect x="235" y="77" width="56" height="65" rx="19" fill="url(#purple)"/>
+            <path d="M251 86 L251 131 M260 84 L260 134 M269 84 L269 133 M278 87 L278 130" stroke="#b58adf" stroke-width="2" opacity=".6"/>
+            <rect x="229" y="214" width="49" height="17" rx="5" fill="#54545d"/>
+            <rect x="202" y="434" width="30" height="34" rx="8" fill="#646773"/>
+            <rect x="145" y="459" width="146" height="41" rx="13" fill="url(#metal)"/>
+            <rect x="153" y="467" width="130" height="25" rx="9" fill="url(#purple)"/>
+            <path d="M166 470 L180 488 M192 470 L206 488 M218 470 L232 488 M244 470 L258 488 M269 470 L278 482" stroke="#dc5c69" stroke-width="7"/>
+          </g>
+        </svg>
+        <div class="airflow" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="stage-caption"><span class="stage-indicator"></span><span id="stage-label">Ready when you are</span></div>
+      </div>
+
+      <div class="control-panel">
+        <div class="panel-heading"><h2>Your controls</h2><span class="state-badge" id="state-badge">STANDBY</span></div>
+        <div class="battery-heading"><label for="battery-meter">Battery level</label><strong><span id="battery-value">100</span><small>%</small></strong></div>
+        <progress id="battery-meter" max="100" value="100">100%</progress>
+        <p class="battery-note" id="battery-note">Full battery. Ready to start.</p>
+
+        <fieldset>
+          <legend>Suction mode</legend>
+          <div class="mode-options">
+            <label><input type="radio" name="mode" value="eco"><span>Eco<small>2% / sec</small></span></label>
+            <label><input type="radio" name="mode" value="normal" checked><span>Normal<small>4% / sec</small></span></label>
+            <label><input type="radio" name="mode" value="boost"><span>Boost<small>8% / sec</small></span></label>
+          </div>
+        </fieldset>
+
+        <button class="power-button" id="power-button" type="button" aria-pressed="false"><span aria-hidden="true">⏻</span> <span id="power-label">Start</span></button>
+        <p class="operation-message" id="operation-message" role="status" aria-live="polite" aria-atomic="true">Click once to start. No need to hold.</p>
+        <div class="test-controls"><span>TEST CONTROL</span><button id="restore-button" type="button">Restore battery <span aria-hidden="true">↺</span></button></div>
+        <p class="test-hint">Restores battery to 100%. Current suction mode is kept.</p>
+      </div>
+    </section>
+
+    <aside class="simulation-note"><span aria-hidden="true">ⓘ</span><p><strong>A simulation, not real performance data.</strong> Battery drain is accelerated for testing: Eco 2%, Normal 4%, and Boost 8% per second. This simplified course model does not reproduce actual Dyson battery life, suction, or automatic sensing.</p></aside>
+    <footer><span>DESIGNED AROUND A SMALLER EFFORT.</span><span>Unofficial educational prototype · HTML / CSS / JavaScript</span></footer>
+  </main>
+</body>
+</html>
