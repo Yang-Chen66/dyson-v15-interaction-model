@@ -97,5 +97,5 @@ I now have a basic understanding of how `isRunning` remembers whether the model 
 
 ## Links
 
-- GitHub repository: [Insert GitHub repository link]
-- AI conversation: [Insert shared AI conversation link]
+- GitHub repository: [dyson-v15-interaction-model](https://github.com/Yang-Chen66/dyson-v15-interaction-model)
+- AI conversation: [View AI conversation](https://chatgpt.com/s/cx_6af2538d3e208191b00dad144fa14136)
